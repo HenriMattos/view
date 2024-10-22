@@ -78,6 +78,8 @@ header p {
     padding: 40px 10px;
     background:#101a42;
     text-align: center;
+    overflow-x: auto;
+    
 }
 
 .game-section h2 {
@@ -89,7 +91,7 @@ header p {
 img {
     max-width: 100%;
     border: 0px;
-  }
+}
 
 .game-section h3 {
   margin: -10px 0 10px;
@@ -103,28 +105,24 @@ img {
   display: -webkit-flex;
 }
 .game-section .item {
-  margin: 0 15px 60px;
-  width: 320px;
-  height: 300px;
-  display: flex;
-  display: -webkit-flex;
-  align-items: flex-end;
-  -webkit-align-items: flex-end;
-  background: #5e5e5e no-repeat center center / cover;
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  cursor: pointer;
+    scroll-snap-align: center; /* Cada card se alinha ao centro ao rolar */
+    margin: 0 15px 60px;
+    width: 320px;
+    height: 300px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    background: #5e5e5e no-repeat center center / cover;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    cursor: pointer;
 }
-.game-section .item.active {
-  width: 500px;
-  box-shadow: 12px 40px 40px rgba(11, 25, 101, 0.25);
-  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-}
+
 .game-section .item:after {
-  content: "";
   display: block;
   position: absolute;
   height: 100%;
@@ -802,4 +800,46 @@ footer p {
         padding: 10px;
         max-width: 100%;
     }
+
 }
+
+.game-section .item {
+    scroll-snap-align: center;
+    width: 250px; /* Padrão para telas grandes */
+  }
+  
+  /* Para telas muito grandes (1200px e acima) */
+  @media (min-width: 1200px) {
+    .game-section .item {
+      width: 300px; /* Aumenta o tamanho dos cards em telas maiores */
+    }
+  }
+  
+  /* Para telas médias (entre 1024px e 1199px) */
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    .game-section .item {
+      width: 250px; /* Tamanho médio dos cards */
+    }
+  }
+  
+  /* Para tablets e telas pequenas (entre 768px e 1023px) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .game-section .item {
+      width: 200px; /* Reduz o tamanho para tablets e pequenos dispositivos */
+    }
+  }
+  
+  /* Para smartphones em modo paisagem (entre 481px e 767px) */
+  @media (min-width: 481px) and (max-width: 767px) {
+    .game-section .item {
+      width: 180px; /* Cards menores para smartphones em paisagem */
+    }
+  }
+  
+  /* Para smartphones em modo retrato (480px e abaixo) */
+  @media (max-width: 480px) {
+    .game-section .item {
+      width: 150px; /* Tamanho pequeno para smartphones em retrato */
+    }
+  }
+  
