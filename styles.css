@@ -140,7 +140,6 @@ header p {
 
 .item-desc p {
     text-align: left;
-    text-align: justify;
     opacity: 0;
     transform: translateY(32px);
     transition: all 0.4s ease-in-out 0.2s;
