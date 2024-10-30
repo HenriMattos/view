@@ -154,20 +154,24 @@ header p {
     transform: translateY(0);
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.swiper-button-next {
+    color: #ffffff !important;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 800;
     padding: 30px;
-    width: 2rem;
-    height: 2rem;
-    opacity: 0.50;
     border-radius: 10%;
-    color: #ffffff;
-    background: #0b1f8000;
+    background: linear-gradient(90deg, #0b1f8000, #0b1f80b3);
+    top: -100px;
+    transform: translateY(-115%); 
+}
+
+.swiper-button-prev {
+    color: #ffffff !important; 
+    display: flex;
+    padding: 30px;
+    border-radius: 10%;
+    background: linear-gradient(90deg, #0b1f80b3, #0b1f8000);
+    top: -100px;
+    transform: translateY(-115%); 
 }
 
 .swiper-button-next::after,
