@@ -50,27 +50,23 @@ header p {
 
 .cta-buttons a {
     padding: 15px 30px;
-    border-radius: 25px;
+    border-radius: 5px;
+    font-size: 18px;
     text-decoration: none;
+    background: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary, .btn-secondary{
+    color:#ffffff;
+    border: solid 1px rgb(255, 255, 255);
+}
+
+.btn-primary:hover, .btn-secondary:hover  {
+    background: #007bff;
     color: #ffffff;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-
-.btn-primary {
-    background-color: #ff8513;
-}
-
-.btn-secondary {
-    background-color: #ff8513;
-}
-
-.btn-primary:hover {
-    background-color: #00db63;
-}
-
-.btn-secondary:hover {
-    background-color: #00db63;
+    border: solid 1px #007bff;
 }
 
 /* Seção de slides */
