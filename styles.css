@@ -61,25 +61,95 @@ html, body {
     margin: 0;
 }
 
-#fixed-header .cta-buttons a {
-    margin-left: 10px;
-    padding: 8px 12px;
+/* Dropdown Card */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 5px;
+    padding: 10px;
+    right: 0;
+    margin-top: 5px;
+    font-size: 0.9rem; /* Menor fonte dentro do card */
+}
+
+.dropdown-content .dropdown-item {
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
     text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content .dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content .dropdown-item:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.dropdown-content .dropdown-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Toggle visibility */
+.show {
+    display: block;
+}
+
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    padding: 8px 12px;
     color: #ffffff;
     border-radius: 5px;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+    background: #007bff;
+    font-size: 18px;
+    border: solid 1px #007bff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-family: 'Poppins';
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-#fixed-header .btn-secondary{
-    color:#ffffff;
-    border: solid 1px rgb(255, 255, 255);
-}
-
-#fixed-header .btn-secondary:hover  {
+.dropdown-toggle:hover {
     background: #007bff;
     color: #ffffff;
-    border: solid 1px #007bff;
+    border: solid 1px #ffffff;
+}
+
+.dropdown-item {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 header {

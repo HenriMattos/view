@@ -15,19 +15,28 @@
 </head>
 <body>
 
-        <header id="fixed-header">
-            <div class="container">
-                <div class="logo-container">
-                    <img src="img/bruno-face.png" alt="Logo" class="logo">
-                    <h1>Explora Manaus</h1>
-                </div>
-                <div class="cta-buttons">
-                    <a href="https://github.com/exploramanaus/App/releases/download/v1.1/Explora.Manaus.v1.1.apk" class="btn-secondary" download>
-                        <i class="fas fa-download"></i> Download App
-                    </a>
+    <header id="fixed-header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="img/bruno-face.png" alt="Logo" class="logo">
+                <h1>Explora Manaus</h1>
+            </div>
+            <div class="cta-buttons">
+                <div class="dropdown">
+                    <button class="dropdown-toggle" id="downloadButton">
+                        <span>Download</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="downloadCard">
+                        <a href="https://github.com/exploramanaus/App/releases/download/v1.1/Explora.Manaus.v1.1.apk" class="dropdown-item">
+                            Android
+                        </a>
+                        <span class="dropdown-item disabled">iOS</span>
+                    </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
         <header id="main-header">
             <div class="container">
@@ -553,7 +562,7 @@
 
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
           
-          <script>
+        <script>
             const swiper = new Swiper(".swiper-slider", {
                 centeredSlides: true,
                 slidesPerView: 1,
@@ -592,9 +601,9 @@
                   }
                 }
               });              
-          </script>
+        </script>
 
-          <script>
+        <script>
               const slider = document.getElementById('timeall-slider');
               const prevBtn = document.getElementById('prev-btn');
               const nextBtn = document.getElementById('next-btn');
@@ -639,7 +648,27 @@
 
               // Initial update
               updateSlider();
-          </script>
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const downloadButton = document.getElementById('downloadButton');
+                const downloadCard = document.getElementById('downloadCard');
+
+                downloadButton.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Evita que o evento se propague para o documento
+                    downloadCard.classList.toggle('show');
+                });
+
+                document.addEventListener('click', () => {
+                    downloadCard.classList.remove('show');
+                });
+
+                downloadCard.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Evita o fechamento ao clicar dentro do card
+                });
+            });
+        </script>
  
 </body>
 </html>
